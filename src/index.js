@@ -8,6 +8,7 @@ import {Provider} from 'react-redux'
 import {createStore, applyMiddleware} from 'redux'
 import reducers from './reducers/root-reducer'
 import Header from './components/header/header-container'
+import Login from './components/login/login-container'
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore)
 
@@ -18,6 +19,7 @@ ReactDOM.render((
     <BrowserRouter>
       <div>
         <Header />
+        <Login />
       </div>
     </BrowserRouter>
   </Provider>
