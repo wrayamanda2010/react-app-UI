@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-// import { loginSubmit } from '../../actions/auth-actions'
-// import { bindActionCreators } from 'redux'
+import { loginSubmit } from '../../actions/auth-actions'
+import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 import './login-container.css'
@@ -27,7 +27,7 @@ class LoginForm extends Component {
 
   onSubmit = (event) => {
     event.preventDefault()
-    // this.props.loginSubmit({ username: this.state.username, password: this.state.password })
+    this.props.loginSubmit({ username: this.state.username, password: this.state.password })
   }
 
   render() {
@@ -57,7 +57,6 @@ class LoginForm extends Component {
 }
 
 const mapStateToProps = (state) => state.auth
-// const mapDispatchToProps = (dispatch) => bindActionCreators({ loginSubmit }, dispatch)
+const mapDispatchToProps = (dispatch) => bindActionCreators({ loginSubmit }, dispatch)
 
-// export default connect(mapStateToProps, mapDispatchToProps)(LoginForm)
-export default connect(mapStateToProps)(LoginForm)
+export default connect(mapStateToProps, mapDispatchToProps)(LoginForm)
