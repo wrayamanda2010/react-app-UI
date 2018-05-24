@@ -23,6 +23,5 @@ import { connect } from 'react-redux'
   }
 
 const mapStateToProps = (state) => state.auth
-// const mapDispatchToProps = (dispatch) => bindActionCreators({logout}, dispatch)
 
 export default connect(mapStateToProps)(Header)
