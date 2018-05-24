@@ -1,2 +1,2 @@
-# react-app-UI
-front end
+# d-stupid-todos-ui
+The UI four stupid todos.
