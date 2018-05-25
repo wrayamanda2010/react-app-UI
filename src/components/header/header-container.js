@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './header-container.css'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import {logout} from '../../actions/auth-actions.js'
 
 // const Header = () => (
 //   <h1>Header</h1>
@@ -10,7 +11,7 @@ import { connect } from 'react-redux'
   class Header extends Component{
     onLogoutClick = (event) => {
       event.preventDefault()
-      // this.props.logout()
+       this.props.logout()
     }
     render() {
       return(
@@ -23,5 +24,5 @@ import { connect } from 'react-redux'
   }
 
 const mapStateToProps = (state) => state.auth
-
-export default connect(mapStateToProps)(Header)
+const mapDispatchToProps = (dispatch) => bindActionCreators({logout}, dispatch)
+export default connect(mapStateToProps, mapDispatchToProps)(Header)

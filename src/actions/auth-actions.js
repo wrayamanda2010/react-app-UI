@@ -30,4 +30,12 @@ const loginSubmit = ({ username, password}) => {
   }
 }
 
-export { LOGIN_FAIL, LOGIN_PASS, loginSubmit}
+const logout = () => (dispatch) => dispatch({type: LOGOUT, payload: {} })
+
+export {
+    LOGIN_FAIL,
+    LOGIN_PASS,
+    LOGOUT,
+    loginSubmit,
+    logout
+  }
